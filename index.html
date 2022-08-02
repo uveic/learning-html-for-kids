@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="gl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="A Feira Franca celébrase o 2 e 3 de setembro de 2022, é unha cita inel">
+    <title>Atopa as parellas</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      #game-wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+      }
+
+      .header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .header-info {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .found-count {
+        font-weight: bold;
+      }
+
+      .header h1 {
+        color: #DC143CFF;
+        flex-grow: 1;
+        width: 1px;
+        min-width: 140px;
+      }
+
+      .game-start {
+        display: block;
+        font-size: 15px;
+        width: auto;
+        flex-grow: 0;
+        color: #ffffff;
+        background-color: #DC143CFF;
+        padding: 12px 18px 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 1.3;
+        text-align: center;
+        border: 1px solid #DC143CFF;
+      }
+
+      #game-grid {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+      }
+
+      .card-wrapper {
+        position: relative;
+        width: 100px;
+        height: 130px;
+        max-width: 130px;
+        flex-grow: 1;
+        cursor: pointer;
+        background-color: transparent;
+        perspective: 1000px;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .card-inner {
+
+      }
+
+      .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+
+      .card-front {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: rotateY(180deg);
+      }
+
+      .card-back {
+        background-color: #DC143CFF;
+      }
+
+      .is-flipped {
+        transform: rotateY(180deg);
+      }
+
+      #game-finished {
+        background-color: #ffffff;
+        position: absolute;
+        height: 30%;
+        width: 70.5%;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        top: 38%;
+        left: 12.5%;
+        border: 21px solid yellow;
+      }
+
+      .finish-congrats {
+        color: #DC143CFF;
+        font-weight: bold;
+        font-size: 30px;
+        text-transform: uppercase;
+      }
+
+      .null {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-wrapper">
+      <div class="header">
+        <h1>Atopa as parellas</h1>
+        <div class="header-info">
+          <span>Intentos: <span class="tries-count">0</span></span>
+          <span>Atopadas: <span class="found-count">0</span></span>
+          <a class="game-start" href="#">Comezar de novo</a>
+        </div>
+      </div>
+      <div id="game-grid"></div>
+      <div id="game-finished" class="null">
+        <span class="finish-congrats">Noraboa!</span>
+        <span class="finish-time"></span>
+        <a class="game-start" href="#">Comezar de novo</a>
+      </div>
+    </div>
+  </body>
+  <script>
+    const images = [
+      'cabo-home.jpg',
+      'estaca-de-bares.jpg',
+      'frouxeira.jpg',
+      'laxe.jpg',
+      'ortegal.jpg',
+      'punta-nariga.jpg',
+      'roncudo.jpg',
+      'tourinan.webp',
+      'cabo-priorino.jpg',
+      'fisterra.jpg',
+      'illa-pancha.jpg',
+      'muxia.jpg',
+      'punta-candieira.jpg',
+      'punta-robaleira.jpg',
+      'torre-hercules.jpg',
+      'vilan.jpg',
+    ];
+    const matchedImages = [];
+    let previousClickedImage = null;
+
+    // Duplicate all images
+    images.forEach(i => images.push(i));
+
+    const shuffleImages = () => {
+      images.sort(() => Math.random() - 0.5);
+    };
+
+    const checkCards = (currentCard) => {
+      if (!previousClickedImage) {
+        previousClickedImage = currentCard;
+        return;
+      }
+
+      const triesCounter = document.querySelector('.tries-count');
+      triesCounter.textContent = Number.parseInt(triesCounter.textContent) + 1;
+
+      if (currentCard.dataset.name === previousClickedImage.dataset.name) {
+        matchedImages.push(currentCard.id);
+        matchedImages.push(previousClickedImage);
+
+        currentCard.classList.add('matched');
+        previousClickedImage.classList.add('matched');
+
+        const foundCounter = document.querySelector('.found-count');
+        foundCounter.textContent = Number.parseInt(foundCounter.textContent) + 1;
+
+        if (matchedImages.length === images.length) {
+          document.querySelector('#game-finished').classList.remove('null');
+        }
+
+        previousClickedImage = null;
+        return;
+      }
+
+      previousClickedImage.classList.remove('is-flipped');
+      currentCard.classList.remove('is-flipped');
+      previousClickedImage = null;
+    };
+
+    const flipCard = (event, card) => {
+      event.preventDefault();
+
+      if (matchedImages.includes(card.id)) return;
+      if (previousClickedImage && previousClickedImage.id === card.id) return;
+
+      card.classList.add('is-flipped');
+
+      setTimeout(() => checkCards(card), 2000);
+    };
+
+    const start = () => {
+      shuffleImages();
+
+      document.querySelector('.tries-count').textContent = '0';
+      document.querySelector('.found-count').textContent = '0';
+      document.querySelector('#game-finished').classList.add('null');
+
+      const grid = document.getElementById('game-grid');
+
+      grid.querySelectorAll('div.card-wrapper').forEach(el => grid.removeChild(el));
+
+      let count = 0;
+      images.forEach(imgName => {
+        const cardWrapper = document.createElement('div');
+        cardWrapper.className = 'card-wrapper';
+        cardWrapper.id = 'card-' + count++;
+        cardWrapper.dataset.name = imgName;
+        cardWrapper.addEventListener('click', e => flipCard(e, cardWrapper));
+
+        const cardFront = document.createElement('div');
+        cardFront.className = 'card-front';
+        cardFront.style.backgroundImage = 'url("/img/' + imgName + '")';
+
+        const cardBack = document.createElement('div');
+        cardBack.className = 'card-back';
+
+        cardWrapper.appendChild(cardFront);
+        cardWrapper.appendChild(cardBack);
+        grid.appendChild(cardWrapper);
+      });
+    };
+
+    document.querySelectorAll('a.game-start').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        start();
+      });
+    });
+
+    start();
+  </script>
+</html>
