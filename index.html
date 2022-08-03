@@ -161,7 +161,7 @@
       'ortegal.jpg',
       'punta-nariga.jpg',
       'roncudo.jpg',
-      'tourinan.webp',
+      'tourinan.jpg',
       'cabo-priorino.jpg',
       'fisterra.jpg',
       'illa-pancha.jpg',
@@ -171,7 +171,7 @@
       'torre-hercules.jpg',
       'vilan.jpg',
     ];
-    const matchedImages = [];
+    let matchedImages = [];
     let previousClickedImage = null;
 
     // Duplicate all images
@@ -227,6 +227,8 @@
     const start = () => {
       shuffleImages();
 
+      matchedImages = [];
+      previousClickedImage = null;
       document.querySelector('.tries-count').textContent = '0';
       document.querySelector('.found-count').textContent = '0';
       document.querySelector('#game-finished').classList.add('null');
