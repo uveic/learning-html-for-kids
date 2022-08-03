@@ -4,267 +4,84 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="A Feira Franca celébrase o 2 e 3 de setembro de 2022, é unha cita inel">
-    <title>Atopa as parellas</title>
-
-    <style>
-      body {
-        font-family: sans-serif;
-      }
-
-      #game-wrapper {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 10px;
-        position: relative;
-      }
-
-      .header {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .header-info {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 20px;
-        align-items: center;
-        justify-content: flex-end;
-      }
-
-      .found-count {
-        font-weight: bold;
-      }
-
-      .header h1 {
-        color: #DC143CFF;
-        flex-grow: 1;
-        width: 1px;
-        min-width: 140px;
-      }
-
-      .game-start {
-        display: block;
-        font-size: 15px;
-        width: auto;
-        flex-grow: 0;
-        color: #ffffff;
-        background-color: #DC143CFF;
-        padding: 12px 18px 10px;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: bold;
-        line-height: 1.3;
-        text-align: center;
-        border: 1px solid #DC143CFF;
-      }
-
-      #game-grid {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 10px;
-      }
-
-      .card-wrapper {
-        position: relative;
-        width: 100px;
-        height: 130px;
-        max-width: 130px;
-        flex-grow: 1;
-        cursor: pointer;
-        background-color: transparent;
-        perspective: 1000px;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-      }
-
-      .card-inner {
-
-      }
-
-      .card-front, .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-      }
-
-      .card-front {
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        transform: rotateY(180deg);
-      }
-
-      .card-back {
-        background-color: #DC143CFF;
-      }
-
-      .is-flipped {
-        transform: rotateY(180deg);
-      }
-
-      #game-finished {
-        background-color: #ffffff;
-        position: absolute;
-        height: 30%;
-        width: 70.5%;
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-        top: 38%;
-        left: 12.5%;
-        border: 21px solid yellow;
-      }
-
-      .finish-congrats {
-        color: #DC143CFF;
-        font-weight: bold;
-        font-size: 30px;
-        text-transform: uppercase;
-      }
-
-      .null {
-        visibility: hidden;
-      }
-    </style>
+    <meta name="description" content="Programación web: conceptos básicos e a miña primeira páxina web">
+    <title>Programación web: conceptos básicos e a miña primeira páxina web</title>
   </head>
+
+  <style>
+    *, *:before, *:after {
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    body {
+      font-family: sans-serif;
+      font-size: 16px;
+      line-height: 1.3;
+      color: #212529;
+      padding: 0;
+      margin: 0;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem 5rem;
+    }
+  </style>
+
   <body>
-    <div id="game-wrapper">
-      <div class="header">
-        <h1>Atopa as parellas</h1>
-        <div class="header-info">
-          <span>Intentos: <span class="tries-count">0</span></span>
-          <span>Atopadas: <span class="found-count">0</span></span>
-          <a class="game-start" href="#">Comezar de novo</a>
-        </div>
-      </div>
-      <div id="game-grid"></div>
-      <div id="game-finished" class="null">
-        <span class="finish-congrats">Noraboa!</span>
-        <span class="finish-time"></span>
-        <a class="game-start" href="#">Comezar de novo</a>
-      </div>
-    </div>
+    <main>
+      <h1>Programación web: conceptos básicos e a miña primeira páxina web</h1>
+      <p>Eu son Víctor e <a href="https://victorgonzalez.eu/">esta</a> é a miña páxina web onde podes atopar o meu correo electrónico e outras formas de poñerte en contacto comigo.</p>
+      <h2>Sesión 1</h2>
+      <ul>
+        <li>HTML e CSS: que son e para que serven?</li>
+        <li>A miña primeira páxina web.</li>
+        <li>Que é un hacker: algúns trucos para comezar no mundo hacker.</li>
+        <li>Que é o software libre e como me podo beneficiar del.</li>
+      </ul>
+      <h2>Sesión 2</h2>
+      <ul>
+        <li>Que é JavaScript e para que serve.</li>
+        <li>O primeiro xogo feito por min: atopa as parellas.</li>
+        <li>Como funciona Internet e como poñer a miña páxina web a disposición de todo o mundo.</li>
+      </ul>
+      <h1>Ligazóns</h1>
+      <ul>
+        <li><a href="01-basics.html">Exemplo de algunhas das etiquetas máis utilizadas</a>.</li>
+        <li><a href="02-faros.html">Exemplo básico de páxina web</a>.</li>
+        <li><a href="03-faros-css.html">Outro exemplo de páxina web con un pouco de CSS</a>.</li>
+        <li><a href="05-game.html">O xogo de atopar as parellas feito por min</a>.</li>
+      </ul>
+      <h1>Descargas</h1>
+      <p>Código base dunha páxina web:</p>
+      <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;gl&quot;&gt;
+
+        &lt;head&gt;
+          &lt;meta charset=&quot;utf-8&quot;&gt;
+          &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt;
+          &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+          &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+          &lt;title&gt;&lt;/title&gt;
+        &lt;/head&gt;
+
+        &lt;body&gt;
+        &lt;/body&gt;
+
+        &lt;/html&gt;
+      </pre>
+      <h1>Recursos para seguir aprendendo</h1>
+      <p><b>HTML</b>: Linguaxe de Etiquetaxe de HiperTexto (ou HyperText Markup Language, en inglés) é unha linguaxe de marcas deseñada para crear páxinas web.</p>
+      <p><b>CSS</b>: follas de estilo (ou Cascading Style Sheets, en inglés) é unha linguaxe usada para definir a presentación de documentos escritos nunha linguaxe de marcación, como é o caso de HTML ou XML.</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Cheatsheet">HTML Cheatsheat (ou chuleta de HTML)</a>: lista das etiquetas máis utilizadas en HTML.</li>
+        <li><a href="https://developer.mozilla.org/es/docs/Learn/HTML">Aprender HTML</a>: curso de balde en español.</li>
+        <li><a href="https://developer.mozilla.org/es/docs/Learn/CSS">Aprender CSS</a>: curso de balde en español.</li>
+        <li><a href="https://colorpicker.me/">Color picker (ou seleccionador de cor)</a>: ferramenta para seleccionar unha cor.</li>
+      </ul>
+    </main>
   </body>
-  <script>
-    const images = [
-      'cabo-home.jpg',
-      'estaca-de-bares.jpg',
-      'frouxeira.jpg',
-      'laxe.jpg',
-      'ortegal.jpg',
-      'punta-nariga.jpg',
-      'roncudo.jpg',
-      'tourinan.jpg',
-      'cabo-priorino.jpg',
-      'fisterra.jpg',
-      'illa-pancha.jpg',
-      'muxia.jpg',
-      'punta-candieira.jpg',
-      'punta-robaleira.jpg',
-      'torre-hercules.jpg',
-      'vilan.jpg',
-    ];
-    let matchedImages = [];
-    let previousClickedImage = null;
-
-    // Duplicate all images
-    images.forEach(i => images.push(i));
-
-    const shuffleImages = () => {
-      images.sort(() => Math.random() - 0.5);
-    };
-
-    const checkCards = (currentCard) => {
-      if (!previousClickedImage) {
-        previousClickedImage = currentCard;
-        return;
-      }
-
-      const triesCounter = document.querySelector('.tries-count');
-      triesCounter.textContent = Number.parseInt(triesCounter.textContent) + 1;
-
-      if (currentCard.dataset.name === previousClickedImage.dataset.name) {
-        matchedImages.push(currentCard.id);
-        matchedImages.push(previousClickedImage);
-
-        currentCard.classList.add('matched');
-        previousClickedImage.classList.add('matched');
-
-        const foundCounter = document.querySelector('.found-count');
-        foundCounter.textContent = Number.parseInt(foundCounter.textContent) + 1;
-
-        if (matchedImages.length === images.length) {
-          document.querySelector('#game-finished').classList.remove('null');
-        }
-
-        previousClickedImage = null;
-        return;
-      }
-
-      previousClickedImage.classList.remove('is-flipped');
-      currentCard.classList.remove('is-flipped');
-      previousClickedImage = null;
-    };
-
-    const flipCard = (event, card) => {
-      event.preventDefault();
-
-      if (matchedImages.includes(card.id)) return;
-      if (previousClickedImage && previousClickedImage.id === card.id) return;
-
-      card.classList.add('is-flipped');
-
-      setTimeout(() => checkCards(card), 2000);
-    };
-
-    const start = () => {
-      shuffleImages();
-
-      matchedImages = [];
-      previousClickedImage = null;
-      document.querySelector('.tries-count').textContent = '0';
-      document.querySelector('.found-count').textContent = '0';
-      document.querySelector('#game-finished').classList.add('null');
-
-      const grid = document.getElementById('game-grid');
-
-      grid.querySelectorAll('div.card-wrapper').forEach(el => grid.removeChild(el));
-
-      let count = 0;
-      images.forEach(imgName => {
-        const cardWrapper = document.createElement('div');
-        cardWrapper.className = 'card-wrapper';
-        cardWrapper.id = 'card-' + count++;
-        cardWrapper.dataset.name = imgName;
-        cardWrapper.addEventListener('click', e => flipCard(e, cardWrapper));
-
-        const cardFront = document.createElement('div');
-        cardFront.className = 'card-front';
-        cardFront.style.backgroundImage = 'url("/img/' + imgName + '")';
-
-        const cardBack = document.createElement('div');
-        cardBack.className = 'card-back';
-
-        cardWrapper.appendChild(cardFront);
-        cardWrapper.appendChild(cardBack);
-        grid.appendChild(cardWrapper);
-      });
-    };
-
-    document.querySelectorAll('a.game-start').forEach(el => {
-      el.addEventListener('click', e => {
-        e.preventDefault();
-        start();
-      });
-    });
-
-    start();
-  </script>
 </html>
