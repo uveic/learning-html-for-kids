@@ -81,10 +81,6 @@
         transform-style: preserve-3d;
       }
 
-      .card-inner {
-
-      }
-
       .card-front, .card-back {
         position: absolute;
         width: 100%;
@@ -192,10 +188,7 @@
 
       if (currentCard.dataset.name === previousClickedImage.dataset.name) {
         matchedImages.push(currentCard.id);
-        matchedImages.push(previousClickedImage);
-
-        currentCard.classList.add('matched');
-        previousClickedImage.classList.add('matched');
+        matchedImages.push(previousClickedImage.id);
 
         const foundCounter = document.querySelector('.found-count');
         foundCounter.textContent = Number.parseInt(foundCounter.textContent) + 1;

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="gl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Atopa as parellas">
+    <title>Atopa as parellas</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      #game-wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        color: #DC143CFF;
+        margin: 30px 5px;
+      }
+
+      .card-wrapper {
+        width: 100px;
+        height: 130px;
+        cursor: pointer;
+        background-color: transparent;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-wrapper">
+      <h1>Atopa as parellas</h1>
+      <div id="game-grid"></div>
+    </div>
+  </body>
+  <script>
+    const images = [
+      'cabo-home.jpg',
+      'estaca-de-bares.jpg',
+      'frouxeira.jpg',
+      'laxe.jpg',
+      'ortegal.jpg',
+      'punta-nariga.jpg',
+      'roncudo.jpg',
+      'tourinan.jpg',
+      'cabo-priorino.jpg',
+      'fisterra.jpg',
+      'illa-pancha.jpg',
+      'muxia.jpg',
+      'punta-candieira.jpg',
+      'punta-robaleira.jpg',
+      'torre-hercules.jpg',
+      'vilan.jpg',
+    ];
+
+    const grid = document.getElementById('game-grid');
+
+    images.forEach(imgName => {
+      const card = document.createElement('div');
+      card.className = 'card-wrapper';
+      card.style.backgroundImage = 'url("/img/' + imgName + '")';
+
+      grid.appendChild(card);
+    });
+  </script>
+</html>
