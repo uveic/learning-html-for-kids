@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="gl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Programación web: conceptos básicos e a miña primeira páxina web">
+    <title>Programación web: conceptos básicos e a miña primeira páxina web</title>
+  </head>
+
+  <style>
+    *, *:before, *:after {
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    @font-face {
+      font-family: "Atlantica";
+      src: url("/fonts/AtlanticaSerif-Book.woff2") format("woff2");
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Atlantica";
+      src: url("/fonts/AtlanticaSerif-BookItalic.woff2") format("woff2");
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Atlantica";
+      src: url("/fonts/AtlanticaSerif-SemiBold.woff2") format("woff2");
+      font-weight: bold;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Atlantica";
+      src: url("/fonts/AtlanticaSerif-SemiBoldItalic.woff2") format("woff2");
+      font-weight: bold;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    body {
+      font-family: Atlantica,sans-serif;;
+      font-size: 18px;
+      line-height: 1.3;
+      color: #212529;
+      padding: 0;
+      margin: 0;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem 5rem;
+    }
+
+    pre {
+      width: 100%;
+      overflow: auto;
+    }
+
+    ul li {
+      margin: 0.25rem 0;
+    }
+
+    .table {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 4rem;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dotted gray;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .table code {
+      text-align: right;
+      min-width: 30%;
+      word-break: break-word;
+    }
+
+    .table p {
+      min-width: 30%;
+    }
+
+    .links {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .links > a,
+    .links > a:hover,
+    .links > a:visited,
+    .links > a:active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20%;
+      flex-grow: 1;
+      background-color: blue;
+      color: #ffffff;
+      padding: 3rem;
+      font-size: 2rem;
+      text-align: center;
+      text-decoration: none;
+    }
+  </style>
+
+  <body>
+    <main>
+      <div style="margin: 2rem 0;"><a href="index.html">&lt; volver</a></div>
+      <h1>Exercicios e código</h1>
+      <p>Máis abaixo podes atopar varias versións da mesma páxina (Faros de Galicia) numeradas desde a 00 ata a 06. Podes facer clic en cada unha das versións para ir vendo as diferenzas.</p>
+      <p>En cada nova versión imos aprender algo novo. Podes atopar unha descrición das novidades xusto debaixo de cada versión.</p>
+      <p>Recorda que podes ver o códifo fonte (HTML e CSS) de todas as páxinas facendo clic co botón dereito e despois "ver código da páxina".</p>
+
+      <h2><a href="faros-00.html">Versión 00</a></h2>
+      <p>Só HTML. As imaxes son máis grandes que a pantalla.
+
+      <h2 style="margin-top:75px;"><a href="faros-01.html">Versión 01</a></h2>
+      <p><a href="uploads/version-01.zip">Descargar código fonte</a></p>
+      <p>Un pouco de CSS para cambiar a apariencia:</p>
+      <ul style="margin-bottom: 75px;">
+        <li>Todas as imaxes teñen o mesmo ancho.</li>
+        <li>Cambiamos a cor do título.</li>
+        <li>Modificamos o espacio arredor dos paráagrafos.</li>
+      </ul>
+
+      <div class="table">
+        <p>Establecemos o ancho do contido en 800 píxels</p>
+        <code>&lt;div style=&quot;width: 800px;margin: 0 auto;&quot;&gt;</code>
+      </div>
+      <div class="table">
+        <p>Establecemos o ancho das imaxes en 800 píxels</p>
+        <code>&lt;img src=&quot;img/fisterra.jpg&quot; alt=&quot;Faro de Fisterra&quot; width=&quot;800&quot;&gt;</code>
+      </div>
+      <div class="table">
+        <h1 style="color: #018747;">Faros de Galicia</h1>
+        <code>&lt;h1 style=&quot;color: #018747;&quot;&gt;Faros de Galicia&lt;/h1&gt;</code>
+      </div>
+      <div class="table">
+        <p>Modificamos o espacio arredor dos paráagrafos</p>
+        <code>&lt;p style=&quot;margin&#45;top: 2px;margin&#45;left: 10px;margin&#45;right: 10px;margin&#45;bottom: 40px;&quot;&gt;</code>
+      </div>
+
+      <h2><a href="faros-02.html">Versión 02</a></h2>
+      <p><a href="uploads/version-02.zip">Descargar código fonte</a></p>
+      <p>Non facemos cambios na apariencia pero movemos todo o CSS (o código para modificar a apariencia) de sitio.</p>
+      <pre>
+&lt;style&gt;
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #018747;
+  }
+
+  p {
+    margin-top: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+&lt;/style&gt;
+      </pre>
+
+      <h2><a href="faros-03.html">Versión 03</a></h2>
+      <p>Modificamos o tipo de letra, unha para o título e outra para o resto do texto.</p>
+      <pre>
+&lt;link href="https://fonts.googleapis.com/css2?family=Rubik+Marker+Hatch&display=swap" rel="stylesheet"&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Rubik+Marker+Hatch&family=Rubik+Maze&display=swap" rel="stylesheet"&gt;
+
+body {
+  font-family: 'Rubik Maze', cursive;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Rubik Marker Hatch', cursive;
+  font-size: 70px;
+  line-height: 1;
+}
+      </pre>
+
+      <h2><a href="faros-04.html">Versión 04</a></h2>
+      <p>Modificamos a cor do fondo e do texto.</p>
+      <pre>
+body {
+  background-color: #202124;
+  color: #e8eaed;
+}
+      </pre>
+
+      <h2><a href="faros-05.html">Versión 05</a></h2>
+      <p>Agrupamos as imaxes de dúas en dúas.</p>
+      <div class="table">
+        <p><code>div</code> utilízase para facer grupos.</p>
+        <pre>
+&lt;div&gt;
+
+&lt;/div&gt;
+        </pre>
+      </div>
+
+      <div class="table">
+        <p>Código para que o contido do <code>div</code> se poña un a carón do outro</p>
+        <code>&lt;div&nbsp;style=&quot;width:&nbsp;49%;margin&#45;right:&nbsp;1%;float:&nbsp;left;&quot;&gt;</code>
+      </div>
+
+      <h2><a href="faros-06.html">Versión 06</a></h2>
+      <p>Utilizamos JavaScript para que as imaxes vaian cambiando ao facer clic enriba delas.</p>
+      <pre>
+&lt;script&gt;
+  document.querySelectorAll('div.child').forEach(element => {
+    element.addEventListener('click', () => {
+
+      element.style.visibility = 'hidden';
+
+      if (element.nextElementSibling) {
+        element.nextElementSibling.style.visibility = 'visible';
+      } else {
+        document.querySelector('div.child').style.visibility = 'visible';
+      }
+
+    });
+  });
+&lt;/script&gt;
+      </pre>
+    </main>
+  </body>
+</html>
