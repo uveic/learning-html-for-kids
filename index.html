@@ -1,159 +1,185 @@
 <!DOCTYPE html>
 <html lang="gl">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Programación web: conceptos básicos e a miña primeira páxina web">
-    <title>Programación web: conceptos básicos e a miña primeira páxina web</title>
-    <script defer data-domain="rianxo.victorgonzalez.eu" src="https://plausible.io/js/plausible.js"></script>
-  </head>
 
-  <style>
-    *, *:before, *:after {
-      box-sizing: border-box;
-      outline: none;
-    }
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Programación web: conceptos básicos e a miña primeira páxina web">
+  <title>Programación web: conceptos básicos e a miña primeira páxina web</title>
+  <script defer data-domain="rianxo.victorgonzalez.eu" src="https://plausible.io/js/plausible.js"></script>
+</head>
 
-    @font-face {
-      font-family: "Atlantica";
-      src: url("/fonts/AtlanticaSerif-Book.woff2") format("woff2");
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Atlantica";
-      src: url("/fonts/AtlanticaSerif-BookItalic.woff2") format("woff2");
-      font-style: italic;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Atlantica";
-      src: url("/fonts/AtlanticaSerif-SemiBold.woff2") format("woff2");
-      font-weight: bold;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Atlantica";
-      src: url("/fonts/AtlanticaSerif-SemiBoldItalic.woff2") format("woff2");
-      font-weight: bold;
-      font-style: italic;
-      font-display: swap;
-    }
+<style>
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    outline: none;
+  }
 
-    body {
-      font-family: Atlantica,sans-serif;;
-      font-size: 18px;
-      line-height: 1.3;
-      color: #212529;
-      padding: 0;
-      margin: 0;
-    }
+  @font-face {
+    font-family: "Atlantica";
+    src: url("/fonts/AtlanticaSerif-Book.woff2") format("woff2");
+    font-display: swap;
+  }
 
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 1rem 5rem;
-    }
+  @font-face {
+    font-family: "Atlantica";
+    src: url("/fonts/AtlanticaSerif-BookItalic.woff2") format("woff2");
+    font-style: italic;
+    font-display: swap;
+  }
 
-    pre {
-      width: 100%;
-      overflow: auto;
-    }
+  @font-face {
+    font-family: "Atlantica";
+    src: url("/fonts/AtlanticaSerif-SemiBold.woff2") format("woff2");
+    font-weight: bold;
+    font-display: swap;
+  }
 
-    ul li {
-      margin: 0.25rem 0;
-    }
+  @font-face {
+    font-family: "Atlantica";
+    src: url("/fonts/AtlanticaSerif-SemiBoldItalic.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
 
-    .table {
-      display: flex;
-      flex-flow: row nowrap;
-      gap: 4rem;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px dotted gray;
-      padding-bottom: 2rem;
-      margin-bottom: 2rem;
-    }
+  body {
+    font-family: Atlantica, sans-serif;
+    ;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #212529;
+    padding: 0;
+    margin: 0;
+  }
 
-    .table code {
-      text-align: right;
-      min-width: 30%;
-      word-break: break-word;
-    }
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem 5rem;
+  }
 
-    .table p {
-      min-width: 30%;
-    }
+  pre {
+    width: 100%;
+    overflow: auto;
+  }
 
-    .links {
-      display: flex;
-      flex-flow: row wrap;
-      gap: 2rem;
-      padding: 2rem;
-    }
+  ul li {
+    margin: 0.25rem 0;
+  }
 
-    .links > a,
-    .links > a:hover,
-    .links > a:visited,
-    .links > a:active {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 20%;
-      flex-grow: 1;
-      background-color: blue;
-      color: #ffffff;
-      padding: 3rem;
-      font-size: 2rem;
-      text-align: center;
-      text-decoration: none;
-    }
-  </style>
+  .table {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 4rem;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dotted gray;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
 
-  <body>
-    <main>
-      <h1>Programación web: conceptos básicos e a miña primeira páxina web</h1>
-      <p>Eu son Víctor e <a href="https://victorgonzalez.eu/">esta</a> é a miña páxina web onde podes atopar o meu correo electrónico e outras formas de poñerte en contacto comigo.</p>
+  .table code {
+    text-align: right;
+    min-width: 30%;
+    word-break: break-word;
+  }
 
-      <div class="links">
-        <a href="html.html">HTML e CSS</a>
-        <a href="exercicios.html">Exercicios e código</a>
-      </div>
+  .table p {
+    min-width: 30%;
+  }
 
-      <h1>Recursos para seguir aprendendo</h1>
-      <p><b>HTML</b>: Linguaxe de Etiquetaxe de HiperTexto (ou HyperText Markup Language, en inglés) é unha linguaxe de marcas deseñada para crear páxinas web.</p>
-      <p><b>CSS</b>: follas de estilo (ou Cascading Style Sheets, en inglés) é unha linguaxe usada para definir a presentación de documentos escritos nunha linguaxe de marcación, como é o caso de HTML ou XML.</p>
-      <h2>Curos en liña gratuitos</h2>
-      <ul>
-        <li><a target="_blank"  href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Cheatsheet">HTML Cheatsheat (ou chuleta de HTML)</a>: lista das etiquetas máis utilizadas en HTML.</li>
-        <li><a target="_blank"  href="https://developer.mozilla.org/es/docs/Learn">Aprender programación web</a>: curso de balde en español.</li>
-        <li><a target="_blank"  href="https://developer.mozilla.org/es/docs/Learn/HTML">Aprender HTML</a>: curso de balde en español.</li>
-        <li><a target="_blank"  href="https://developer.mozilla.org/es/docs/Learn/CSS">Aprender CSS</a>: curso de balde en español.</li>
-        <li><a target="_blank"  href="https://developer.mozilla.org/es/docs/Learn/JavaScript">Aprender JavaScript</a>: curso de balde en español.</li>
-      </ul>
-      <h2>Ferramentas en liña gratuitas</h2>
-      <ul>
-        <li><a target="_blank" href="https://colorpicker.me/">Color picker (ou seleccionador de cor)</a>: ferramenta para seleccionar unha cor.</li>
-        <li><a target="_blank" href="https://fonts.google.com/">Google Fonts</a>: listaxe de fontes para utilizar na túa páxina web.</li>
-      </ul>
+  .links {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    padding: 2rem;
+  }
 
-      <h2>Programas para programar</h2>
-      <ul>
-        <li><a target="_blank" href="https://code.visualstudio.com/">Visual Studio Code</a></li>
-        <li><a target="_blank" href="https://www.sublimetext.com/">Sublime Text</a></li>
-      </ul>
+  .links>a,
+  .links>a:hover,
+  .links>a:visited,
+  .links>a:active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    flex-grow: 1;
+    background-color: blue;
+    color: #ffffff;
+    padding: 3rem;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+  }
+</style>
 
-      <h1>Xogo: <a href="05-game.html">atopa as parellas</a></h1>
-      <ul>
-        <li><a href="04-00-game.html">Versión 1</a></li>
-        <li><a href="04-01-game.html">Versión 2</a></li>
-        <li><a href="04-02-game.html">Versión 3</a></li>
-        <li><a href="04-03-game.html">Versión 4</a></li>
-        <li><a href="04-04-game.html">Versión 5</a></li>
-        <li><a href="04-05-game.html">Versión 6</a></li>
-        <li><a href="04-06-game.html">Versión final</a></li>
-        <li><a href="05-game.html">Versión final mellorada</a></li>
-      </ul>
-    </main>
-  </body>
+<body>
+  <main>
+    <h1>Programación web: conceptos básicos e a miña primeira páxina web</h1>
+    <p>Eu son Víctor e <a href="https://victorgonzalez.eu/">esta</a> é a miña páxina web onde podes atopar o meu correo
+      electrónico e outras formas de poñerte en contacto comigo.</p>
+
+    <div class="links">
+      <a href="html.html">HTML e CSS</a>
+      <a href="exercicios.html">Exercicios e código</a>
+    </div>
+
+    <h1>Recursos para seguir aprendendo</h1>
+    <p><b>HTML</b>: Linguaxe de Etiquetaxe de HiperTexto (ou HyperText Markup Language, en inglés) é unha linguaxe de
+      marcas deseñada para crear páxinas web.</p>
+    <p><b>CSS</b>: follas de estilo (ou Cascading Style Sheets, en inglés) é unha linguaxe usada para definir a
+      presentación de documentos escritos nunha linguaxe de marcación, como é o caso de HTML ou XML.</p>
+    <h2>Curos en liña gratuitos</h2>
+    <ul>
+      <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Cheatsheet">HTML Cheatsheat (ou
+          chuleta de HTML)</a>: lista das etiquetas máis utilizadas en HTML.</li>
+      <li><a target="_blank" href="https://developer.mozilla.org/es/docs/Learn">Aprender programación web</a>: curso de
+        balde en español.</li>
+      <li><a target="_blank" href="https://developer.mozilla.org/es/docs/Learn/HTML">Aprender HTML</a>: curso de balde
+        en español.</li>
+      <li><a target="_blank" href="https://developer.mozilla.org/es/docs/Learn/CSS">Aprender CSS</a>: curso de balde en
+        español.</li>
+      <li><a target="_blank" href="https://developer.mozilla.org/es/docs/Learn/JavaScript">Aprender JavaScript</a>:
+        curso de balde en español.</li>
+    </ul>
+
+    <h2>Outros cursos en liña: en inglés e de de pago</h2>
+    <ul>
+      <li><a target="_blank" href="https://learnhtmlcss.online/">Learn HTML & CSS</a>: aprender HYML e CSS.</li>
+      <li><a target="_blank" href="https://learnprogramming.online/">Learn Programming</a>: aprender a programar.</li>
+      <li><a target="_blank" href="https://learnjavascript.online/">Learn JavaScript</a>: aprender JavaScript.</li>
+    </ul>
+
+    <h2>Ferramentas en liña gratuitas</h2>
+    <ul>
+      <li><a target="_blank" href="https://colorpicker.me/">Color picker (ou seleccionador de cor)</a>: ferramenta para
+        seleccionar unha cor.</li>
+      <li><a target="_blank" href="https://fonts.google.com/">Google Fonts</a>: listaxe de fontes para utilizar na túa
+        páxina web.</li>
+    </ul>
+
+    <h2>Programas para programar</h2>
+    <ul>
+      <li><a target="_blank" href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+      <li><a target="_blank" href="https://www.sublimetext.com/">Sublime Text</a></li>
+    </ul>
+
+    <h1>Xogo: <a href="05-game.html">atopa as parellas</a></h1>
+    <ul>
+      <li><a href="04-00-game.html">Versión 1</a></li>
+      <li><a href="04-01-game.html">Versión 2</a></li>
+      <li><a href="04-02-game.html">Versión 3</a></li>
+      <li><a href="04-03-game.html">Versión 4</a></li>
+      <li><a href="04-04-game.html">Versión 5</a></li>
+      <li><a href="04-05-game.html">Versión 6</a></li>
+      <li><a href="04-06-game.html">Versión final</a></li>
+      <li><a href="05-game.html">Versión final mellorada</a></li>
+    </ul>
+  </main>
+</body>
+
 </html>
