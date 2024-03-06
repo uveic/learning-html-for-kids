@@ -69,41 +69,6 @@
         gap: 10px;
       }
 
-      .card-wrapper {
-        position: relative;
-        width: 100px;
-        height: 130px;
-        max-width: 130px;
-        flex-grow: 1;
-        cursor: pointer;
-        background-color: transparent;
-        perspective: 1000px;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-      }
-
-      .card-front, .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-      }
-
-      .card-front {
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        transform: rotateY(180deg);
-      }
-
-      .card-back {
-        background-color: #DC143CFF;
-      }
-
-      .is-flipped {
-        transform: rotateY(180deg);
-      }
-
       #game-finished {
         background-color: #ffffff;
         position: absolute;
@@ -185,14 +150,14 @@
       }
 
       const triesCounter = document.querySelector('.tries-count');
-      triesCounter.textContent = Number.parseInt(triesCounter.textContent) + 1;
+      triesCounter.textContent = (Number.parseInt(triesCounter.textContent) + 1).toString();
 
       if (currentCard.dataset.name === previousClickedImage.dataset.name) {
         matchedImages.push(currentCard.id);
         matchedImages.push(previousClickedImage.id);
 
         const foundCounter = document.querySelector('.found-count');
-        foundCounter.textContent = Number.parseInt(foundCounter.textContent) + 1;
+        foundCounter.textContent = (Number.parseInt(foundCounter.textContent) + 1).toString();
 
         if (matchedImages.length === images.length) {
           document.querySelector('#game-finished').classList.remove('null');
